@@ -89,7 +89,7 @@ class informationNetwork():
 	def run_network(self):
 		"""Train and calculated the network's information"""
 		if self.run_in_parallel:
-			results = Parallel(n_jobs=NUM_CORES)(delayed(nn.train_network)
+			results = Parallel(n_jobs=NUM_CORES)(delayed(nn.train_and_calc_inf_network)
 			                                     (self.layers_sizes[j],
 			                                      self.num_ephocs, self.learning_rate, self.batch_size,
 			                                      self.epochs_indexes, self.save_grads, self.data_sets,
